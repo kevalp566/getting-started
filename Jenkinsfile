@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Pull Code') {
             steps {
-                echo 'Building..'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github_Account_Creds', url: 'https://github.com/kevalp566/getting-started.git']]])
+                
             }
         }
         stage('Test') {
