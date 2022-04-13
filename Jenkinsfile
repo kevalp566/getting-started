@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Pull Code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github_Account_Creds', url: 'https://github.com/kevalp566/getting-started.git']]])
-                
+                                echo 'Build..'
+
             }
         }
         stage('Test') {
